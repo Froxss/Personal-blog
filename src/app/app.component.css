@@ -1,0 +1,24 @@
+/* app.component.css */
+:host {
+    display: block;
+    height: 100vh; 
+  }
+  
+  app-navbar-component {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; 
+  }
+  
+  .content {
+    margin-top: 3rem; 
+    padding: 1rem 13rem;
+    background-color:#000814 ;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
