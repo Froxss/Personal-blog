@@ -1,0 +1,142 @@
+.aboutMeContainer {
+  color: #fff4d6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 175px;
+}
+
+.name {
+  font-size: 3rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  margin-right: 180px;
+  text-align: end;
+  line-height: 50px;
+  margin-top: 70px;
+}
+
+p {
+  min-width: 250px;
+  text-align: end;
+  margin-right: 180px;
+}
+
+.arrow {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+  align-items: center;
+  margin-top: 100px;
+  animation: moveArrow 0.5s infinite alternate;
+}
+
+@keyframes moveArrow {
+  0% {
+      transform: translateY(10px);
+  }
+  100% {
+      transform: translateY(0px);
+  }
+}
+
+.animatedDivs {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: opacity 1s, transform 1s;
+}
+
+.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.portraitSvg {
+  min-height: 150px;
+  max-height: 350px;
+  transform: scaleX(-1);
+}
+
+.rowFlex {
+  display: flex;
+  flex-direction: row;
+}
+
+.iconContainer{
+  
+  margin-right: 180px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.socialMediaIcons{
+  background-color: #fff4d6;
+  
+  width: 40px;
+  padding: 5px;
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0.3;
+  cursor: pointer;
+}
+.socialMediaIcons:hover{
+  opacity: 0.9 
+}
+
+@media screen and (max-width: 992px) {
+  .rowFlex {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  .portraitSvg {
+      min-height: 40px;
+      max-height: 200px;
+  }
+
+  .name {
+      font-size: 2rem;
+      line-height: 40px;
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+  }
+
+  p {
+      font-size: small;
+      text-align: center;
+      margin-left: auto;
+      margin-right: auto;
+      
+  }
+  
+
+  .socialMediaIcons{
+    background-color: #fff4d6;
+    width: 30px;
+    padding: 5px;
+    border-radius: 10px;
+    margin-left: 15px;
+    opacity: 0.5;
+    transition: opacity 0.3s ease-in-out;
+    opacity: 0.3;
+    cursor: pointer;
+    
+     
+  }
+  .socialMediaIcons:hover{
+    opacity: 0.9 
+  }
+  .iconContainer{
+  
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 75px;
+    display: flex;
+    
+    justify-content: space-between;
+  }
+}

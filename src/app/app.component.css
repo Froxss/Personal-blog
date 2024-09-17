@@ -1,24 +1,31 @@
-/* app.component.css */
 :host {
-    display: block;
-    height: 100vh; 
-  }
-  
-  app-navbar-component {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000; 
-  }
-  
-  .content {
-    margin-top: 3rem; 
-    padding: 1rem 13rem;
-    background-color:#000814 ;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
+  display: block;
+  height: 100vh; 
+  scroll-snap-type: y mandatory; /* Scroll snap ekliyoruz */
+  overflow-y: scroll; /* Dikey scroll barı aktif hale getiriyoruz */
+}
+
+app-navbar-component {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+.content {
+  margin-top: 3rem;
+  padding: 0; 
+  height: 100vh;
+  scroll-snap-align: start; 
+}
+
+app-welcome-screen, app-about-me, app-skills {
+  height: 100vh; 
+  scroll-snap-align: start; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 13rem;
+  background-color: #000814;
+}
