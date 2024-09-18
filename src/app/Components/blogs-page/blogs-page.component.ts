@@ -1,10 +1,11 @@
-import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
+import { AfterViewInit, Component, ElementRef } from '@angular/core';
 import {
   NgbPaginationModule,
   NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { ScrollAnimateService } from '../../services/scroll-animate.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-blogs-page',
@@ -16,151 +17,115 @@ import { ScrollAnimateService } from '../../services/scroll-animate.service';
 export class BlogsPageComponent implements AfterViewInit {
   p: number = 1;
   posts = [
-    // Listeye daha fazla veri ekleyin
+    { id: 1, title: 'New project: Logology', date: 'Oct 30' },
     {
-      title: 'New project: Logology',
-      date: 'Oct 30',
-      url: 'https://angezanetti.com/posts/logology-meaningful-logos-for-startups/',
-    },
-    {
+      id: 2,
       title: 'Develop a Wordpress Theme locally With Docker',
       date: 'Oct 6',
-      url: 'https://angezanetti.com/posts/develop-wordpress-theme-with-docker/',
     },
     {
+      id: 3,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 4,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 5,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 6,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 7,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 8,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 9,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 10,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 11,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 12,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 13,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 14,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 15,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 16,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 17,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 18,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 19,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
     {
+      id: 20,
       title: 'Why you need a VPN and how to install one',
       date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
     },
-    {
-      title: 'Why you need a VPN and how to install one',
-      date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
-    },
-    {
-      title: 'Why you need a VPN and how to install one',
-      date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
-    },
-    {
-      title: 'Why you need a VPN and how to install one',
-      date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
-    },
-    {
-      title: 'Why you need a VPN and how to install one',
-      date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
-    },
-    {
-      title: 'Why you need a VPN and how to install one',
-      date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
-    },
-    {
-      title: 'Why you need a VPN and how to install one',
-      date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
-    },
-    {
-      title: 'Why you need a VPN and how to install one',
-      date: 'Jun 15',
-      url: 'https://angezanetti.com/posts/how-to-install-openvpn/',
-    },
-    // Daha fazla post ekleyin
   ];
 
   constructor(
     private el: ElementRef,
-    private scrollAnimateService: ScrollAnimateService
+    private scrollAnimateService: ScrollAnimateService,
+    private router: Router
   ) {}
 
   ngAfterViewInit() {
     this.scrollAnimateService.initIntersectionObserver(this.el);
+  }
+
+  navigateToDetail(id: number) {
+    this.router.navigate(['/blog', id]);
   }
 }

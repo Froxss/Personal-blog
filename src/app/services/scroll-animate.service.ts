@@ -12,9 +12,9 @@ export class ScrollAnimateService {
     const elements = el.nativeElement.querySelectorAll('.animate-on-scroll') as NodeListOf<HTMLElement>;
 
     elements.forEach((element, index) => {
-      const delay = index * 300; // Her bir öğe için 300ms gecikme
+      const delay = index * 300; 
 
-      // Animasyon gecikmesini CSS ile ayarlayın
+      
       element.style.transitionDelay = `${delay}ms`;
 
       this.observer = new IntersectionObserver((entries) => {
@@ -23,7 +23,7 @@ export class ScrollAnimateService {
             const target = entry.target as HTMLElement;
             if (!target.classList.contains('animated')) {
               target.classList.add('animate');
-              target.classList.add('animated'); // Animasyonun yapıldığını işaretleyin
+              target.classList.add('animated'); 
             }
           }
         });

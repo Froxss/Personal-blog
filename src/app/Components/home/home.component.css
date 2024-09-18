@@ -1,8 +1,8 @@
 :host {
   display: block;
   height: 100vh;
-  scroll-snap-type: y mandatory; /* Scroll snap ekliyoruz */
-  overflow-y: scroll; /* Dikey scroll barı aktif hale getiriyoruz */
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll; 
 }
 
 app-navbar-component {

@@ -43,7 +43,7 @@ p {
   text-align: center;
   align-items: center;
   margin-top: 100px;
-  animation: moveArrow 0.5s infinite alternate; /* Animasyon tanımlama */
+  animation: moveArrow 0.5s infinite alternate; 
 }
 
 @keyframes moveArrow {

@@ -8,7 +8,7 @@
           *ngFor="let post of posts.slice((p - 1) * 8, p * 8)"
           class="postItem"
         >
-          <a [href]="post.url">
+          <a (click)="navigateToDetail(post.id)">
             <span class="postTitle">{{ post.title }}</span>
             <span class="postDay">{{ post.date }}</span>
           </a>
