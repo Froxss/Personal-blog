@@ -1,65 +1,72 @@
-.navBarContainer{
-    background-color: #000814 ; 
+.navBarContainer {
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 11rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 20;
+}
+
+.navBarList {
+  display: flex;
+  padding: 30px;
+  gap: 2rem;
+  list-style-type: none;
+}
+
+.navBarButtons {
+  padding: 10px;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Varsayılan hover stili */
+.navBarButtons:hover {
+  background-color: #ff8b59;
+  color: #000814;
+}
+
+.material-symbols-outlined {
+  padding: 10px;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.light-mode .material-symbols-outlined::before {
+  content: "bedtime";
+}
+
+.dark-mode .material-symbols-outlined::before {
+  content: "light_mode";
+}
+
+.themeIcon {
+  padding-right: 50px;
+  transition: transform 0.2s ease;
+}
+
+.themeIcon:hover {
+  transform: scale(1.2);
+}
+
+@media screen and (max-width: 992px) {
+  .navBarContainer {
     height: 55px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1rem 11rem;
+    padding: 1rem 2rem;
     position: fixed;
     left: 0;
     right: 0;
     top: 0;
     z-index: 20;
-    
-    
-    
-}
-
-.navBarList{
-    display: flex;
-    padding: 30px;
-    gap: 2rem;
-    list-style-type: none;
-        
-}
-
-
-
-.material-symbols-outlined {
-    padding: 10px;
-    font-size: 26px;
-    color: wheat;
-    cursor: pointer;
-    
-}
-
-
-
-.themeIcon{
-    padding-right: 50px;
-    transition: transform 0.2s ease; 
-}
-
-.themeIcon:hover {
-    transform: scale(1.2); 
-}
-
-
-
-@media screen and (max-width: 992px) {
-    .navBarContainer {
-        
-        height: 55px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 1rem 2rem;
-        position: fixed;
-        left: 0;
-        right: 0;
-        top: 0;
-        z-index: 20;
-        
-    }
   }
-
+}

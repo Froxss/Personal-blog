@@ -1,9 +1,9 @@
 <div class="navBarContainer">
-    <ul  class="navBarList poppins-semibold">
-        <li><a href="/">Home</a></li>
-        <li><a href="/blog">Blogs</a></li>
-    </ul>
-     <mat-icon class="themeIcon"><span class="material-symbols-outlined">
-        bedtime
-        </span></mat-icon> 
+  <ul class="navBarList poppins-semibold">
+    <li><a class="navBarButtons" href="/">Home</a></li>
+    <li><a class="navBarButtons" href="/blog">Blogs</a></li>
+  </ul>
+  <mat-icon class="themeIcon" (click)="toggleTheme()"
+    ><span class="material-symbols-outlined">{{ themeIcon }}</span></mat-icon
+  >
 </div>
