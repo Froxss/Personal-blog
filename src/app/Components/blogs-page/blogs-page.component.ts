@@ -1,5 +1,8 @@
 import { AfterViewInit, Component, ElementRef } from '@angular/core';
-import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbPaginationModule,
+  NgbAlertModule,
+} from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
 import { ScrollAnimateService } from '../../services/scroll-animate.service';
 import { Router } from '@angular/router';
@@ -20,9 +23,9 @@ export class BlogsPageComponent implements AfterViewInit {
     private el: ElementRef,
     private scrollAnimateService: ScrollAnimateService,
     private router: Router,
-    private blogService: BlogService // Servisi kullanma
+    private blogService: BlogService
   ) {
-    this.posts = this.blogService.getPosts(); // Verileri al
+    this.posts = this.blogService.getPosts();
   }
 
   ngAfterViewInit() {
@@ -30,6 +33,6 @@ export class BlogsPageComponent implements AfterViewInit {
   }
 
   navigateToDetail(id: number) {
-    this.router.navigate(['/blog', id]);
+    this.router.navigate(['/blogs', id]);
   }
 }

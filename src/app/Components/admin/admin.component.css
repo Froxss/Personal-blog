@@ -1,12 +1,10 @@
-/* Mat form field için genişlik */
 mat-form-field {
-  width: 100%; /* Tam genişlik */
-  max-width: 600px; /* Maksimum genişlik */
-  margin-bottom: 20px; /* Alt boşluk */
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
 }
 
 .editor {
-  height: 450px;
   display: inline;
 }
 
@@ -15,8 +13,18 @@ mat-form-field {
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #ff8b59;
 }
 
+.blogContentLabels {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 2rem;
+}
+
 button {
   margin-top: 30px;
+  background-color: #ff8b59;
 }
 
 .box {
@@ -24,23 +32,26 @@ button {
   box-shadow: none;
 }
 
-.form-control::placeholder {
-  color: gray;
-}
-
-.form-control:focus {
-  border-color: #ff8b59;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #ff8b59;
-}
-
-input {
-  background-color: inherit;
-}
-
 ::ng-deep .ql-container.ql-snow {
-  border: 1px solid #ddd !important; /* Normal border rengi */
+  border: 1px solid #ddd !important;
+  height: 300px;
 }
 
 ::ng-deep .ql-container.ql-snow:focus-within {
-  border-color: #007bff !important; /* Focus olduğunda border rengi */
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #ff8b59;
+  border-color: #ff8b59 !important;
+}
+
+.adminPageContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 90vh;
+}
+
+.form-container {
+  margin: 40px;
+  outline: 1.5px solid rgba(207, 207, 207, 0.781);
+  outline-offset: 75px;
+  border-radius: 1px;
 }

@@ -6,6 +6,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { NotFoundComponent } from './Components/not-found/not-found.component'; // Yeni 404 componenti
 import { AdminComponent } from './Components/admin/admin.component';
 import { LoginComponent } from './Components/login/login.component';
+import { AuthGuard } from './auth.guard';
 
 export const routes: Routes = [
   { path: 'blogs', component: BlogsPageComponent },
@@ -13,7 +14,9 @@ export const routes: Routes = [
   { path: 'admin', component: AdminComponent },
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent },
-  { path: '**', component: NotFoundComponent }, // Herhangi bir yol bulunamazsa yönlendirme
+  { path: '**', component: NotFoundComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'admin', component: AdminComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({

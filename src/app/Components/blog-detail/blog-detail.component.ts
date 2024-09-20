@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BlogService } from '../../services/blog.service'; // Servisi içe aktar
+import { BlogService } from '../../services/blog.service';
+// Servisi içe aktar
 
 @Component({
   selector: 'app-blog-detail',
@@ -12,17 +13,15 @@ export class BlogDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private router: Router,
-    private blogService: BlogService
+    private blogService: BlogService, // BlogService'i enjekte et
+    private router: Router
   ) {}
 
-  ngOnInit(): void {
+  ngOnInit() {
     const id = Number(this.route.snapshot.paramMap.get('id'));
-
-    
     this.post = this.blogService.getPostById(id);
 
-    
+    // Eğer post bulunamazsa 404 sayfasına yönlendir
     if (!this.post) {
       this.router.navigate(['/404']);
     }
