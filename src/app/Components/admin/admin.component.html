@@ -1,35 +1,36 @@
 <div class="adminPageContainer">
-  <div class="row center-xs">
-    <div class="col-xs-6 form-container">
-      <div class="box">
-        <div class="admin-container">
-          <div>
-            <div class="example-full-width form-group">
-              <input
-                class="form-control"
-                type="text"
-                id="blogTitle"
-                [(ngModel)]="blogTitle"
-                matInput
-                placeholder="Blog Title"
-                value="Blog Title "
-              />
+    <div class="row center-xs">
+      <div class="col-xs-6 form-container">
+        <div class="box">
+          <div class="admin-container">
+            <div>
+              <div class="example-full-width form-group">
+                <input
+                  class="form-control"
+                  type="text"
+                  id="blogTitle"
+                  [(ngModel)]="blogTitle"
+                  matInput
+                  placeholder="Blog Title"
+                  value="Blog Title "
+                />
+              </div>
             </div>
+  
+            <div>
+              <label class="blogContentLabels"><p>Blog content</p></label>
+              <quill-editor
+                class="editor"
+                [(ngModel)]="blogContent"
+              ></quill-editor>
+            </div>
+  
+            <button type="button" class="btn btn-warning" (click)="saveBlog()">
+              Save Blog
+            </button>
           </div>
-
-          <div>
-            <label class="blogContentLabels"><p>Blog content</p></label>
-            <quill-editor
-              class="editor"
-              [(ngModel)]="blogContent"
-            ></quill-editor>
-          </div>
-
-          <button type="button" class="btn btn-warning" (click)="saveBlog()">
-            Save Blog
-          </button>
         </div>
       </div>
     </div>
   </div>
-</div>
+  

@@ -1,39 +1,23 @@
-import { Component, ElementRef, AfterViewInit } from '@angular/core';
+import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-@Component({
-  selector: 'app-about-me',
-  standalone: true,
-  templateUrl: './about-me.component.html',
-  styleUrls: ['./about-me.component.css']
-})
-export class AboutMeComponent implements AfterViewInit {
-  private observer!: IntersectionObserver;
+import { AboutMeComponent } from './about-me.component';
 
-  constructor(private el: ElementRef) {}
+describe('AboutMeComponent', () => {
+  let component: AboutMeComponent;
+  let fixture: ComponentFixture<AboutMeComponent>;
 
-  ngAfterViewInit() {
-    this.initIntersectionObserver();
-  }
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      imports: [AboutMeComponent]
+    })
+    .compileComponents();
 
-  private initIntersectionObserver() {
-    const elements = this.el.nativeElement.querySelectorAll('.animate-on-scroll') as NodeListOf<HTMLElement>;
+    fixture = TestBed.createComponent(AboutMeComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
 
-    elements.forEach((element, index) => {
-      const delay = index * 300; // Her bir öğe için sıralı gecikme
-
-      setTimeout(() => {
-        this.observer = new IntersectionObserver((entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              (entry.target as HTMLElement).classList.add('animate');
-            } else {
-              (entry.target as HTMLElement).classList.remove('animate');
-            }
-          });
-        }, { threshold: 0.5 });
-
-        this.observer.observe(element);
-      }, delay);
-    });
-  }
-}
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+});

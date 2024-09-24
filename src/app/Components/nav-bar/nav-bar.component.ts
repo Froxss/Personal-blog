@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { ThemeService } from '../../services/theme-change.service';
+import { ThemeService } from '../../Services/Theme/theme-change.service';
 
 @Component({
   selector: 'app-navbar-component',
   standalone: true,
   imports: [MatIconModule],
-  templateUrl: './navbar-component.component.html',
-  styleUrl: './navbar-component.component.css',
+  templateUrl: './nav-bar.component.html',
+  styleUrl: './nav-bar.component.scss',
 })
-export class NavbarComponentComponent {
+export class NavbarComponent {
   themeIcon: string = 'bedtime';
 
   constructor(private themeService: ThemeService) {

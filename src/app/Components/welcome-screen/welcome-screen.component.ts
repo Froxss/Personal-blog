@@ -7,7 +7,7 @@ import { MatIconModule } from '@angular/material/icon';
   standalone: true,
   imports: [MatButtonModule,MatIconModule],
   templateUrl: './welcome-screen.component.html',
-  styleUrl: './welcome-screen.component.css'
+  styleUrl: './welcome-screen.component.scss'
 })
 export class WelcomeScreenComponent {
 

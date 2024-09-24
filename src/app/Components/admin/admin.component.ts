@@ -1,15 +1,15 @@
 import { Component } from '@angular/core';
-import { BlogService } from '../../services/blog.service';
 import { QuillModule } from 'ngx-quill';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { BlogService } from '../../Services/blog/blog.service';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
   templateUrl: './admin.component.html',
   imports: [QuillModule, FormsModule, ReactiveFormsModule, MatInputModule],
-  styleUrls: ['./admin.component.css'],
+  styleUrls: ['./admin.component.scss'],
 })
 export class AdminComponent {
   blogTitle: string = '';

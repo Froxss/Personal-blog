@@ -1,3 +1,10 @@
+// Değişkenler
+$primary-color: #ff8b59;
+$secondary-color: #000814;
+$font-family: "Poppins", sans-serif;
+$font-weight-semibold: 600;
+
+// Genel Stiller
 .wellcomeContainer {
   display: flex;
   flex-direction: column;
@@ -5,6 +12,7 @@
   margin-top: 175px;
 }
 
+// Link Stili
 .a {
   text-decoration: none;
   padding: 10px;
@@ -15,27 +23,32 @@
   margin: 2px;
   width: 160px;
   text-align: center;
+  color: inherit;
+
+  &:hover {
+    background-color: $primary-color;
+    color: $secondary-color;
+  }
 }
 
-.a:hover {
-  background-color: #ff8b59;
-  color: #000814;
-}
-
+// İsim Stili
 .name {
   font-size: 6rem;
   text-align: center;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
+  font-family: $font-family;
+  font-weight: $font-weight-semibold;
   margin: 10px;
   letter-spacing: 10px;
   line-height: 100px;
 }
+
+// Paragraf Stili
 p {
   width: 250px;
   text-align: center;
 }
 
+// Ok Stili
 .arrow {
   display: inline-block;
   width: 80px;
@@ -43,9 +56,10 @@ p {
   text-align: center;
   align-items: center;
   margin-top: 100px;
-  animation: moveArrow 0.5s infinite alternate; 
+  animation: moveArrow 0.5s infinite alternate;
 }
 
+// Animasyonlar
 @keyframes moveArrow {
   0% {
     transform: translateY(10px);
@@ -55,38 +69,40 @@ p {
   }
 }
 
+// Material Icon Stili
 .material-symbols-outlined {
   font-size: 40px;
   width: 80px;
   height: 80px;
 }
 
+// Animasyonlu Divler
 .animatedDivs {
   opacity: 0;
-  transform: translateY(100px); /* Alt kısımdan başlayacak */
-  animation: slideUp 1s forwards; /* Yukarı çıkma animasyonu */
+  transform: translateY(100px);
+  animation: slideUp 1s forwards;
+
+  &:nth-child(1) {
+    animation-delay: 0.3s;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 0.6s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.9s;
+  }
 }
 
-.animatedDivs:nth-child(1) {
-  animation-delay: 0.3s; /* İlk öğe 0.3 saniye gecikmeyle animasyon başlar */
-}
-
-.animatedDivs:nth-child(2) {
-  animation-delay: 0.6s; /* İkinci öğe 0.6 saniye gecikmeyle animasyon başlar */
-}
-
-.animatedDivs:nth-child(3) {
-  animation-delay: 0.9s; /* Üçüncü öğe 0.9 saniye gecikmeyle animasyon başlar */
-}
-
-/* Animasyon tanımı */
+// Slide Up Animasyonu
 @keyframes slideUp {
   0% {
     opacity: 0;
-    transform: translateY(100px); /* Başlangıç pozisyonu */
+    transform: translateY(100px);
   }
   100% {
     opacity: 1;
-    transform: translateY(0); /* Yukarı kayarak yerine otur */
+    transform: translateY(0);
   }
 }

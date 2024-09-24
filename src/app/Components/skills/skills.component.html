@@ -1,31 +1,32 @@
 <div class="skillsContainer">
-  <div>
-    <div class="animatedDivs animate-on-scroll">
-      <h1 class="title">skills I have 💪</h1>
+    <div>
+      <div class="animatedDivs animate-on-scroll">
+        <h1 class="title">skills I have 💪</h1>
+      </div>
+      <div
+        *ngFor="let section of skills.slice(0, 3)"
+        class="animatedDivs animate-on-scroll"
+      >
+        <h2>{{ section.title }}</h2>
+        <div class="textContainer">
+          <p *ngFor="let item of section.items" class="poppins-light">
+            {{ item }}
+          </p>
+        </div>
+      </div>
     </div>
-    <div
-      *ngFor="let section of skills.slice(0, 3)"
-      class="animatedDivs animate-on-scroll"
-    >
-      <h2>{{ section.title }}</h2>
-      <div class="textContainer">
-        <p *ngFor="let item of section.items" class="poppins-light">
-          {{ item }}
-        </p>
+    <div>
+      <div
+        *ngFor="let section of skills.slice(3)"
+        class="animatedDivs animate-on-scroll"
+      >
+        <h2>{{ section.title }}</h2>
+        <div class="textContainer">
+          <p *ngFor="let item of section.items" class="poppins-light">
+            {{ item }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
-  <div>
-    <div
-      *ngFor="let section of skills.slice(3)"
-      class="animatedDivs animate-on-scroll"
-    >
-      <h2>{{ section.title }}</h2>
-      <div class="textContainer">
-        <p *ngFor="let item of section.items" class="poppins-light">
-          {{ item }}
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
+  

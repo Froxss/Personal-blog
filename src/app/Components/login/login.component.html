@@ -1,41 +1,42 @@
 <div class="loginPageContainer">
-  <div class="row center-xs">
-    <div class="col-xs-6">
-      <div class="box">
-        <!-- Formu ngSubmit ile bağlayın -->
-        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-          <div class="form-group">
-            <label>Login</label>
+    <div class="row center-xs">
+      <div class="col-xs-6">
+        <div class="box">
+          <!-- Formu ngSubmit ile bağlayın -->
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label>Login</label>
+              <hr />
+              <input
+                type="email"
+                class="form-control"
+                id="exampleInputEmail1"
+                formControlName="email"
+                placeholder="Enter email"
+                (focus)="clearErrorMessage()"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                type="password"
+                class="form-control"
+                id="exampleInputPassword1"
+                formControlName="password"
+                placeholder="Password"
+                (focus)="clearErrorMessage()"
+              />
+            </div>
+            <div class="form-group"></div>
+            <!-- Button type="submit" olarak kalabilir -->
+            <button type="submit" class="btn btn-warning">Submit</button>
+            <div *ngIf="errorMessage">{{ errorMessage }}</div>
             <hr />
-            <input
-              type="email"
-              class="form-control"
-              id="exampleInputEmail1"
-              formControlName="email"
-              placeholder="Enter email"
-              (focus)="clearErrorMessage()"
-            />
-          </div>
-          <div class="form-group">
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputPassword1"
-              formControlName="password"
-              placeholder="Password"
-              (focus)="clearErrorMessage()"
-            />
-          </div>
-          <div class="form-group"></div>
-          <!-- Button type="submit" olarak kalabilir -->
-          <button type="submit" class="btn btn-warning">Submit</button>
-          <div *ngIf="errorMessage">{{ errorMessage }}</div>
-          <hr />
-          <label>
-            <a href="#"><span>Forgot Your Password?</span></a>
-          </label>
-        </form>
+            <label>
+              <a href="#"><span>Forgot Your Password?</span></a>
+            </label>
+          </form>
+        </div>
       </div>
     </div>
   </div>
-</div>
+  

@@ -1,29 +1,23 @@
-.skillsContainer {
+.aboutMeContainer {
   display: flex;
-  flex-direction: row;
-  gap: 200px;
+  flex-direction: column;
+  align-items: center;
   margin-top: 175px;
-  scale: 1.2;
 }
 
-.textContainer {
-  display: flex;
-  width: max-content;
-  gap: 10px;
-}
-
-.title {
+.name {
+  font-size: 3rem;
   font-family: "Poppins", sans-serif;
-  font-weight: 700;
+  font-weight: 600;
+
+  text-align: end;
+  line-height: 50px;
+  margin-top: 70px;
 }
 
-@keyframes moveArrow {
-  0% {
-    transform: translateY(10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+p {
+  min-width: 250px;
+  text-align: end;
 }
 
 .animatedDivs {
@@ -55,22 +49,17 @@
 }
 
 .socialMediaIcons {
+  background-color: #fff4d6;
   width: 40px;
   padding: 5px;
   border-radius: 10px;
   transition: opacity 0.3s ease-in-out;
   opacity: 0.3;
   cursor: pointer;
-}
 
-.socialMediaIcons:hover {
-  opacity: 0.9;
-}
-
-h2 {
-  font-size: xx-large;
-  text-decoration: underline;
-  margin: 0px;
+  &:hover {
+    opacity: 0.9;
+  }
 }
 
 @media screen and (max-width: 992px) {
@@ -106,8 +95,7 @@ h2 {
     padding: 5px;
     border-radius: 10px;
     margin-left: 15px;
-    opacity: 0.5;
-    transition: opacity 0.3s ease-in-out;
+    opacity: 0.3;
   }
 
   .iconContainer {
@@ -116,13 +104,5 @@ h2 {
     margin-bottom: 75px;
     display: flex;
     justify-content: space-between;
-  }
-
-  .skillsContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 10px;
-    margin: auto;
   }
 }

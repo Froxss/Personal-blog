@@ -1,13 +1,13 @@
 import { AfterViewInit, Component, ElementRef } from '@angular/core';
-import { ScrollAnimateService } from '../../services/scroll-animate.service';
 import { CommonModule } from '@angular/common';
+import { ScrollAnimateService } from '../../Services/scroll-animate/scroll-animate.service';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
   imports: [CommonModule],
   templateUrl: './skills.component.html',
-  styleUrl: './skills.component.css',
+  styleUrl: './skills.component.scss',
 })
 export class SkillsComponent implements AfterViewInit {
   constructor(

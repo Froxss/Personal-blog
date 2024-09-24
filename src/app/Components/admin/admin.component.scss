@@ -6,11 +6,11 @@ mat-form-field {
 
 .editor {
   display: inline;
-}
 
-.editor :focus {
-  border-color: #ff8b59;
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #ff8b59;
+  &:focus {
+    border-color: #ff8b59;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #ff8b59;
+  }
 }
 
 .blogContentLabels {
@@ -32,14 +32,16 @@ button {
   box-shadow: none;
 }
 
-::ng-deep .ql-container.ql-snow {
-  border: 1px solid #ddd !important;
-  height: 300px;
-}
+::ng-deep {
+  .ql-container.ql-snow {
+    border: 1px solid #ddd !important;
+    height: 300px;
 
-::ng-deep .ql-container.ql-snow:focus-within {
-  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #ff8b59;
-  border-color: #ff8b59 !important;
+    &:focus-within {
+      box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #ff8b59;
+      border-color: #ff8b59 !important;
+    }
+  }
 }
 
 .adminPageContainer {

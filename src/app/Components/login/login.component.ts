@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.css',
+  styleUrl: './login.component.scss',
 })
 export class LoginComponent {
   loginForm: FormGroup;
@@ -32,6 +32,7 @@ export class LoginComponent {
 
     // Hardcoded kullanıcı doğrulama
     if (email === 'admin@admin.com' && password === '123') {
+      localStorage.setItem('currentUser', JSON.stringify({ email }));
       this.router.navigate(['/admin']); // admin sayfasına yönlendir
     } else {
       this.errorMessage = 'Hatalı e-posta veya parola.';

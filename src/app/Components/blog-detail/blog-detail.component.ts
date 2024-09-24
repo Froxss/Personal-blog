@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { BlogService } from '../../services/blog.service';
-// Servisi içe aktar
+import { BlogService } from '../../Services/blog/blog.service';
+
 
 @Component({
   selector: 'app-blog-detail',
   templateUrl: './blog-detail.component.html',
-  styleUrls: ['./blog-detail.component.css'],
+  styleUrls: ['./blog-detail.component.scss'],
 })
 export class BlogDetailComponent implements OnInit {
   post: any;

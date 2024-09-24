@@ -1,0 +1,45 @@
+// Değişkenler
+$nav-height: 55px; // Navbar yüksekliği
+$navbar-z-index: 1000; // Navbar z-index
+$margin-top-content: $nav-height; // İçerik için margin ayarı
+$padding-page: 1rem 13rem;
+
+// Navbar Component
+app-navbar-component {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $navbar-z-index;
+  height: $nav-height; // Navbar yüksekliğini ayarla
+}
+
+// Content Class
+.content {
+  margin-top: $margin-top-content; // Navbar yüksekliği kadar boşluk
+  padding: $padding-page; // İçerik için padding
+  height: calc(100vh - $nav-height); // İçeriğin tam görünüm yüksekliği
+  overflow-y: auto; // İçerik alanı kaydırılabilir
+
+  @media screen and (max-width: 992px) {
+    padding: 0 1rem; // Küçük ekranlar için padding ayarla
+    margin-top: $nav-height; // Mobile responsive için margin ayarla
+  }
+}
+
+// Page Components Styling
+$app-components: app-welcome-screen, app-about-me, app-skills, app-my-project,
+  app-blogs-page;
+
+@app-components {
+  height: 100vh; // Her bileşenin yüksekliği
+  scroll-snap-align: start;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: $padding-page; // Bileşen içi padding
+
+  @media screen and (max-width: 992px) {
+    height: auto; // Küçük ekranlarda otomatik yükseklik
+  }
+}

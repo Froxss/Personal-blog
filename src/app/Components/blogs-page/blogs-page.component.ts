@@ -4,16 +4,16 @@ import {
   NgbAlertModule,
 } from '@ng-bootstrap/ng-bootstrap';
 import { CommonModule } from '@angular/common';
-import { ScrollAnimateService } from '../../services/scroll-animate.service';
 import { Router } from '@angular/router';
-import { BlogService } from '../../services/blog.service'; // Servisi içe aktar
+import { ScrollAnimateService } from '../../Services/scroll-animate/scroll-animate.service';
+import { BlogService } from '../../Services/blog/blog.service';
 
 @Component({
   selector: 'app-blogs-page',
   standalone: true,
   imports: [CommonModule, NgbPaginationModule, NgbAlertModule],
   templateUrl: './blogs-page.component.html',
-  styleUrls: ['./blogs-page.component.css'],
+  styleUrls: ['./blogs-page.component.scss'],
 })
 export class BlogsPageComponent implements AfterViewInit {
   p: number = 1;

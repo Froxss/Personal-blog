@@ -9,7 +9,7 @@ import { AboutMeComponent } from "../about-me/about-me.component";
   standalone: true,
   imports: [WelcomeScreenComponent, SkillsComponent, MyProjectComponent, AboutMeComponent],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  styleUrl: './home.component.scss'
 })
 export class HomeComponent {
 

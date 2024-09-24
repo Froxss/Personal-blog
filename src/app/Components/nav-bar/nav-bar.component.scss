@@ -1,0 +1,70 @@
+// Değişkenler
+$nav-height: 55px;
+$nav-padding: 1rem;
+$nav-gap: 2rem;
+$theme-icon-padding: 10px;
+$theme-icon-hover-scale: 1.2;
+$hover-bg-color: #ff8b59;
+$hover-text-color: #000814;
+
+.navBarContainer {
+  height: $nav-height;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $nav-padding 11rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 20;
+
+  @media screen and (max-width: 992px) {
+    padding: $nav-padding 2rem;
+  }
+}
+
+.navBarList {
+  display: flex;
+  padding: 30px;
+  gap: $nav-gap;
+  list-style-type: none;
+  margin-top: 20px;
+}
+
+.navBarButtons {
+  padding: 10px;
+  display: inline-block;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    background-color: $hover-bg-color;
+    color: $hover-text-color;
+  }
+}
+
+.material-symbols-outlined {
+  padding: $theme-icon-padding;
+  font-size: 26px;
+  cursor: pointer;
+
+  &.light-mode::before {
+    content: "bedtime";
+  }
+
+  &.dark-mode::before {
+    content: "light_mode";
+  }
+}
+
+.themeIcon {
+  padding-right: 50px;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale($theme-icon-hover-scale);
+  }
+}

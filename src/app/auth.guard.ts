@@ -27,6 +27,6 @@ export class AuthGuard implements CanActivate {
 
   private checkLogin(): boolean {
     // Giriş kontrolünüzü burada uygulayın
-    return !!localStorage.getItem('user'); // Örnek: Kullanıcının local storage'da var olup olmadığını kontrol et
+    return !!localStorage.getItem('currentUser'); // Örnek: Kullanıcının local storage'da var olup olmadığını kontrol et
   }
 }
