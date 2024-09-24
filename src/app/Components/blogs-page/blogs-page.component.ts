@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit } from '@angular/core';
 import {
   NgbPaginationModule,
   NgbAlertModule,
@@ -15,17 +15,32 @@ import { BlogService } from '../../Services/blog/blog.service';
   templateUrl: './blogs-page.component.html',
   styleUrls: ['./blogs-page.component.scss'],
 })
-export class BlogsPageComponent implements AfterViewInit {
+export class BlogsPageComponent implements OnInit, AfterViewInit {
   p: number = 1;
-  posts: any[] = [];
+  blogs: any[] = [];
 
   constructor(
     private el: ElementRef,
     private scrollAnimateService: ScrollAnimateService,
     private router: Router,
     private blogService: BlogService
-  ) {
-    this.posts = this.blogService.getPosts();
+  ) {}
+
+  ngOnInit(): void {
+    this.blogService.getBlogs().subscribe({
+      next: (data) => {
+        this.blogs = data;
+
+        this.blogs.sort(
+          (a, b) =>
+            new Date(b.createDate).getTime() - new Date(a.createDate).getTime()
+        );
+      },
+      error: (err) => {
+        console.error('Hata:', err);
+      },
+    });
+    this.p = 1;
   }
 
   ngAfterViewInit() {

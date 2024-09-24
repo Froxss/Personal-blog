@@ -1,32 +1,33 @@
 <div class="pageContainer">
-    <div class="postContainer">
-      <p class="poppins-semibold posts animatedDivs animate-on-scroll">POSTS</p>
-      <div class="postsGroup">
-        <div class="postYear animatedDivs animate-on-scroll">2019</div>
-        <ul class="postsList animatedDivs animate-on-scroll">
-          <li
-            *ngFor="let post of posts.slice((p - 1) * 8, p * 8)"
-            class="postItem"
-          >
-            <a (click)="navigateToDetail(post.id)">
-              <span class="postTitle">{{ post.title }}</span>
-              <span class="postDay">{{ post.date }}</span>
-            </a>
-          </li>
-        </ul>
-      </div>
-  
-      <div class="pagination-controls animatedDivs animate-on-scroll">
-        <ngb-pagination
-          class="ngb-pagination"
-          [collectionSize]="posts.length"
-          [(page)]="p"
-          [maxSize]="5"
-          [rotate]="true"
-          [ellipses]="false"
-          [boundaryLinks]="true"
-        ></ngb-pagination>
-      </div>
+  <div class="postContainer">
+    <p class="poppins-semibold posts animatedDivs animate-on-scroll">POSTS</p>
+    <div class="postsGroup">
+      <ul class="postsList animatedDivs animate-on-scroll">
+        <li
+          *ngFor="let post of blogs.slice((p - 1) * 8, p * 8)"
+          class="postItem"
+        >
+          <a (click)="navigateToDetail(post.blogID)">
+            <span class="postTitle">{{ post.title }}</span>
+            <span class="postDay">{{
+              post.createDate | date : " MMM  / YY"
+            }}</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="pagination-controls animatedDivs animate-on-scroll">
+      <ngb-pagination
+        class="ngb-pagination"
+        [collectionSize]="blogs.length"
+        [(page)]="p"
+        [maxSize]="5"
+        [rotate]="true"
+        [ellipses]="true"
+        [boundaryLinks]="true"
+        [pageSize]="8"
+      ></ngb-pagination>
     </div>
   </div>
-  
+</div>

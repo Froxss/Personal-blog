@@ -23,7 +23,7 @@ export class AdminComponent {
       day: 'numeric',
     });
 
-    this.blogService.addPost(this.blogTitle, currentDate);
+    // this.blogService.addPost(this.blogTitle, currentDate);
 
     this.blogTitle = '';
     this.blogContent = '';
